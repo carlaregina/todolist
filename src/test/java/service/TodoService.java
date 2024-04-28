@@ -28,12 +28,12 @@ public class TodoService {
         return todoRepository.findAll(sort);
     }
 
-    public List<Todo> delete(Todo todo){
+    public List<Todo> update(Todo todo){
         todoRepository.save(todo);
         return list();
     }
 
-    public List<Todo> update(Long id){
+    public List<Todo> delete(Long id){
         todoRepository.deleteById(id);
         return list();
     }
