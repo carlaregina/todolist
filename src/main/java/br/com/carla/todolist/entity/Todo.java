@@ -1,6 +1,7 @@
 package br.com.carla.todolist.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 
 @Entity
@@ -10,9 +11,23 @@ public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotBlank
     private String name;
+
+    @NotBlank
     private String description;
     private boolean finished;
+
+    public Todo() {
+    }
+
+    public Todo(String name, String description, boolean finished, int priority) {
+        this.name = name;
+        this.description = description;
+        this.finished = finished;
+        this.priority = priority;
+    }
 
     public Long getId() {
         return id;
