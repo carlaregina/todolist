@@ -1,4 +1,4 @@
-package entity;
+package br.com.carla.todolist.entity;
 
 import jakarta.persistence.*;
 

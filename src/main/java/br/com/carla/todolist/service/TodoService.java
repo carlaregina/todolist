@@ -1,10 +1,10 @@
-package service;
+package br.com.carla.todolist.service;
 
-import entity.Todo;
+import br.com.carla.todolist.entity.Todo;
 
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import repository.TodoRepository;
+import br.com.carla.todolist.repository.TodoRepository;
 
 import java.util.List;
 

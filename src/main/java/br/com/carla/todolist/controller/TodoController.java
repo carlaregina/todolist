@@ -1,8 +1,8 @@
-package controller;
+package br.com.carla.todolist.controller;
 
-import entity.Todo;
+import br.com.carla.todolist.entity.Todo;
 import org.springframework.web.bind.annotation.*;
-import service.TodoService;
+import br.com.carla.todolist.service.TodoService;
 
 import java.util.List;
 
