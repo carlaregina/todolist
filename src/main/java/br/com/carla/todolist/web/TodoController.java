@@ -1,7 +1,9 @@
-package br.com.carla.todolist.controller;
+package br.com.carla.todolist.web;
 
 import br.com.carla.todolist.entity.Todo;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import br.com.carla.todolist.service.TodoService;
 
@@ -18,8 +20,9 @@ public class TodoController {
     }
 
     @PostMapping
-    List<Todo> create(@RequestBody @Valid Todo todo){
-        return todoService.create(todo);
+    ResponseEntity<List<Todo>> create(@RequestBody @Valid Todo todo){
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(todoService.create(todo));
     }
 
     @GetMapping
@@ -28,8 +31,8 @@ public class TodoController {
     }
 
     @PutMapping
-    List<Todo> update(@RequestBody Todo todo){
-        return todoService.update(todo);
+    List<Todo> update(@PathVariable Long id, @RequestBody Todo todo) {
+        return todoService.update(id, todo);
     }
 
     @DeleteMapping({"{id}"})
