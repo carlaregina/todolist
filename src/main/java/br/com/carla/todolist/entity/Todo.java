@@ -29,6 +29,9 @@ public class Todo {
         this.priority = priority;
     }
 
+    public Todo(long l, String s, String curtir, boolean b, int i) {
+    }
+
     public Long getId() {
         return id;
     }
